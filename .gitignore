@@ -1,0 +1,13 @@
+.DS_Store
+.idea
+.vscode
+node_modules
+dist
+bin
+build
+coverage
+auth-key.txt
+.history
+.lh
+src/test.js
+raw/command

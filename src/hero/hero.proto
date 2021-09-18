@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+// 这里的名字要跟 grpcClientOptions 里的名字保持一致
+package hero123;
+
+service HeroGrpc {
+  rpc FindOne(HeroById) returns (HeroResp);
+  rpc FindMan(stream HeroById) returns(stream HeroResp);
+}
+
+message HeroById {
+  int32 id = 1;
+}
+
+message HeroResp {
+  int32 id = 1;
+  string name = 2;
+}
