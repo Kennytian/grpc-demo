@@ -4,15 +4,20 @@ syntax = "proto3";
 package hero123;
 
 service HeroGrpc {
-  rpc FindOne(HeroById) returns (HeroResp);
-  rpc FindMan(stream HeroById) returns(stream HeroResp);
+  rpc FindOne(HeroById) returns (HeroReply);
+  rpc FindMany(stream HeroById) returns(stream HeroReply);
+  rpc FindAll(HeroById) returns (HeroesReply);
 }
 
 message HeroById {
   int32 id = 1;
 }
 
-message HeroResp {
+message HeroReply {
   int32 id = 1;
   string name = 2;
+}
+
+message HeroesReply {
+  repeated HeroReply heroes = 1;
 }
